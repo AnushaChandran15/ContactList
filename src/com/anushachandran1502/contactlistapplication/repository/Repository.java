@@ -89,5 +89,11 @@ String query = "SELECT * FROM contacts WHERE LOWER(name) LIKE '%"+search.toLower
 		}
 		return list;
 	}
+	public boolean editTheContactDB(String name, String newName, String newPhoneNo) throws SQLException {
+		String query = "UPDATE contacts SET name = '"+newName+"' , phone_no = '"+newPhoneNo+"' WHERE name = '"+name+"'";
+		PreparedStatement ps = con.prepareStatement(query);
+		int rowsAffected = ps.executeUpdate();
+		return rowsAffected>0?true:false;
+	}
 
 }

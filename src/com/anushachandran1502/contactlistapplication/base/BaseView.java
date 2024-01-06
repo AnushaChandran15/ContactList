@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import com.anushachandran1502.contactlistapplication.addcontact.AddContactView;
 import com.anushachandran1502.contactlistapplication.deletecontact.DeleteContactView;
+import com.anushachandran1502.contactlistapplication.editcontact.EditContactView;
 import com.anushachandran1502.contactlistapplication.searchcontact.SearchContactView;
 import com.anushachandran1502.contactlistapplication.showcontacts.ShowContactsView;
 
@@ -16,9 +17,10 @@ public class BaseView {
 		DeleteContactView deleteView=new DeleteContactView();
 		SearchContactView searchContact=new SearchContactView();
 		ShowContactsView showView=new ShowContactsView();
+		EditContactView editView=new EditContactView();
 		Scanner scanner=new Scanner(System.in);
-		System.out.println(" ========================================================================================================");
 		System.out.println(" My Contacts");
+		showView.showMycontactsList();
 		boolean terminate=true;
 		while(terminate)
 		{
@@ -50,6 +52,9 @@ public class BaseView {
 					break;
 				case 4:
 					showView.showMycontactsList();
+					break;
+				case 5:
+					editView.editConctact();
 					break;
 				case 0:
 					System.out.println("Exit.....");
